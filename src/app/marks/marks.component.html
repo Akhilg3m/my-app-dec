@@ -1,0 +1,31 @@
+<h1>Math Subject Results</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of results">
+            <td>{{result.name | uppercase }}</td>
+            <td>{{result.subject}}</td>
+            <td [ngStyle]="{ 'color': result.marks<35?'red':'green'}">{{result.marks}}</td>
+            <td [ngClass]="{ 'red': result.marks<35, 'green':result.marks>=35 }">{{result.result}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>{{today}}</h1>
+
+<h1>{{today | date}}</h1>
+
+<h1>{{today | date:'yyyy-MM-dd'}}</h1>
+
+<h1>{{today | date:'dd-MM-yy'}}</h1>
+
+
+<h1>{{results | json}}</h1>

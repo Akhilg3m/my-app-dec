@@ -1,27 +1,150 @@
-# MyAppDec
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+Angular: Angular is framework to build single page application(SPA).
+--------
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+        Framework: combination of languages and libraries
+        ----------
 
-## Code scaffolding
+            HTML
+            CSS
+            TypeScript
+            Rxjs
+            Zone.js
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Angular Project Setup:
+----------------------
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1) Download and install node.js
 
-## Running unit tests
+    Check:
+    ------
+        node -v
+        npm -v
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2) Install angular
 
-## Running end-to-end tests
+    npm install -g @angular/cli@15
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    check:  ng version
+    ------
 
-## Further help
+3) Create new projecct
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ng new my-app
+
+4) start the server
+
+    ng serve
+
+
+
+Powershell permissions to VSCODE:
+--------------------------------
+
+1) Open powershell as a administrator
+
+2) run
+
+    set-executionpolicy unrestricted
+
+
+Angular Concepts:
+----------------
+
+
+
+Routing: Angular is SPA, Routing helps us to navigate from one view to another view.
+--------
+
+
+    Process:
+    --------
+    1) Create path in app-routing.module.ts, in routes array.
+    2) Mention <router-outlet> to load the router output.
+
+
+    4 types of routes:
+    ------------------
+
+        1) General Route:
+        -----------------
+            {path:'login', component: LoginCompoent}
+
+        2) Children Route:
+        ------------------
+            {path:'dashboard', component:DashboardComponent, childrend:[
+                {path:'home', ...},
+                {path:'about', ...}
+            ]}
+
+        3) Empty Route:
+        ---------------
+            {path:'', component: LoginComponent}
+
+        4) Fallback Route/ Wildcard route:
+        ----------------------------------
+            {path:'**', component: PagenotfoundComponent}
+
+
+    Naviagation from view:
+    ----------------------
+
+        1) From HTML:
+        --------------
+
+            <button routerLink="/login">
+
+
+        2) From TS:
+        -----------
+
+
+Angular Architecture:
+---------------------
+
+
+
+GIT Setup:
+----------
+
+1) Link laptop to website
+-------------------------
+
+    git config --global user.name "XXXXX"
+    git config --global user.email "XXXXXX"
+
+
+2) Link project folder with github repository
+---------------------------------------------
+
+    git init    
+    git remote add origin URL
+
+3) Upload the code
+------------------
+
+    git add .
+    git commit -m "XXXXXX"
+    git push
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

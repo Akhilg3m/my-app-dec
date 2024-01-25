@@ -1,0 +1,28 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.right{
+    width: 80%;
+    height: 100%;
+    background-color: teal;
+    overflow: auto;
+}
+.logout{
+    background-color: red;
+    color: white;
+    border: 0;
+    padding: 10px;
+    width: 80%;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
