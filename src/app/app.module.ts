@@ -9,13 +9,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { MarksComponent } from './marks/marks.component';
 import { ProductsComponent } from './products/products.component';
 import { PricePipe } from './price.pipe';
-
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +31,16 @@ import { PricePipe } from './price.pipe';
     DirectivesComponent,
     MarksComponent,
     ProductsComponent,
-    PricePipe
+    PricePipe,
+    VehicleComponent,
+    CreateVehicleComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

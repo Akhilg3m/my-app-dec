@@ -109,25 +109,93 @@ Angular Architecture:
 GIT Setup:
 ----------
 
-1) Link laptop to website
--------------------------
+0) -> download and install git software
+   -> create account in github website
+
+1) Link laptop to website: (laptop<->website)
+--------------------------
 
     git config --global user.name "XXXXX"
     git config --global user.email "XXXXXX"
 
-
-2) Link project folder with github repository
----------------------------------------------
+2) Link project folder with github repository:  (project<->repository)
+----------------------------------------------
 
     git init    
     git remote add origin URL
 
-3) Upload the code
-------------------
+3) Upload the code: (Process)
+-------------------
 
     git add .
     git commit -m "XXXXXX"
     git push
+
+
+1) Employee table
+
+    SNO       Name      Company      Experience      Package        Working Employee    
+
+    1         a          TCS            4             1100000            true             
+
+
+    1) Show SNO
+    2) Implment delete activity
+    3) experience low to high
+       experience high to low
+       Package low to high
+       Package high to low
+    4) add 20% hike
+       50000 bonus
+    5) junior developers (below 5 years exp)
+       senior developers (above 5 years exp)
+    6) Total CTC
+    7) Total employees
+
+
+API Integration:
+----------------
+
+1) import HttpClientModule.
+
+2) Inject HttpClient service in VehicleService
+
+3) Getusers method
+
+4) inject vehicleService in Vehicle component
+   listen to data
+
+
+ALL possible API calls:
+=======================
+
+1) all          get              get(url)
+
+2) specific     get              get(url/id)
+
+3) filtering    get              get(url?filter=XXXX)
+
+4) sorting      get              get(url?sortBy=XXXX, order=XXXX)
+
+5) paginarion   get              get(url?limit=10&page=1)
+
+6) create       post             post(url,data)
+
+7) update       put              put(url/id,data)
+
+8) delete       delete           delete(url/id)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

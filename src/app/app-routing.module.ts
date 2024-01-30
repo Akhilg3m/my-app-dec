@@ -10,6 +10,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { MarksComponent } from './marks/marks.component';
 import { ProductsComponent } from './products/products.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
     {path:'directives', component: DirectivesComponent},
     {path:'marks', component: MarksComponent},
     {path:'products', component: ProductsComponent},
+    {path:'vehicle', component: VehicleComponent},
+    {path:'create-vehicle', component: CreateVehicleComponent}
   ]},
   {path:'', component: LoginComponent},
   {path:'**',component:PagenotfoundComponent}
