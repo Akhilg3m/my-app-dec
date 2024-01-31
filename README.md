@@ -187,6 +187,14 @@ ALL possible API calls:
 
 
 
+Forms:
+======
+1) FormGroup
+2) Nested FormGroup
+3) FormArray
+4) Dynamic Forms
+5) Form Validations
+6) Custom Validator
 
 
 
