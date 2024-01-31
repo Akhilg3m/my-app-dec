@@ -12,10 +12,11 @@ import { MarksComponent } from './marks/marks.component';
 import { ProductsComponent } from './products/products.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent,children:[
+  {path:'dashboard', canActivate:[AuthenticationGuard], component: DashboardComponent,children:[
     {path:'home', component:HomeComponent},
     {path:'about', component: AboutComponent},
     {path:'data-binding', component:DataBindingComponent},
