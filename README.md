@@ -346,10 +346,23 @@ child.ts
 
 
 
+ng g c siblings
+
+ng g c sibling1
+ng g c sibling2
+
+ng g s common
 
 
+1) create path and dashboard link for sibings component
 
+2) load sibling1 and sibling2 in siblings component 
+    <app-sibling1></app-sibling1>
+    <app-sibling2></app-sibling2>
 
+3) Inject common service in sibling1 and sibling2
+
+    
 
 
 

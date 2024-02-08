@@ -21,6 +21,9 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,10 @@ import { ChildComponent } from './child/child.component';
     CreateVehicleComponent,
     CreateUserComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    SiblingsComponent,
+    Sibling1Component,
+    Sibling2Component
   ],
   imports: [
     HttpClientModule,

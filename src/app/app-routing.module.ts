@@ -15,6 +15,7 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
+import { SiblingsComponent } from './siblings/siblings.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
     {path:'create-vehicle', component: CreateVehicleComponent},
     {path:'create-user', component: CreateUserComponent},
     {path:'parent', component: ParentComponent},
-    {path:'edit-vehicle/:id',component: CreateVehicleComponent}
+    {path:'edit-vehicle/:id',component: CreateVehicleComponent},
+    {path:'siblings', component: SiblingsComponent}
   ]},
   {path:'', component: LoginComponent},
   {path:'**',component:PagenotfoundComponent}
