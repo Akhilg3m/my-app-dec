@@ -187,6 +187,7 @@ ALL possible API calls:
 
 
 
+
 Forms:
 ======
 1) FormGroup
@@ -195,6 +196,153 @@ Forms:
 4) Dynamic Forms
 5) Form Validations
 6) Custom Validator
+
+
+Form Validations:
+-----------------
+TS:
+---
+    age: new FormControl("", [Validators.required, Validators.min(0)])
+
+HTML:
+-----
+
+    <input formControlName="age">
+
+    <div *ngIf="______?.touched && ______?.invalid">
+
+        <p *ngIf="_____?.errors?.['required']"> MESSAGE </p>
+        <p *ngIf="_____?.errors?.['min']"> MESSAGE </p>
+
+    </div>
+
+    1) FormGroup:  userForm.get('age')
+
+    2) NestedFormGroup: userForm.get('address')?.get('pincode')
+
+    3) FormArray: CardsFormArray.controls[i].get('cvv')
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+	name:'iphone',
+	price: 50000,
+	model: '15Plus',
+	freeDelivery: yes,
+    image: 'url',
+    waranty:{
+        eligible: true,
+        months: 12
+    },
+    ratings: {
+        'one': 20,
+        'two': 30,
+        'three': 10,
+        'four': 44,
+        'five': 500
+    }
+	sellerInfo: [
+        {
+            name: 'bigc',
+            address: {
+                line1: '2-203, lulu mall',
+                area: 'kphb',
+                city: 'Hyderabad',
+                pincode: 500072
+            }
+        },
+        {
+            name: 'happy mobiles',
+            address: {
+                line1: '2-203, forum mall',
+                area: 'kphb',
+                city: 'Hyderabad',
+                pincode: 500072
+            }
+        },
+        
+    ],
+	comments: [
+		{time:'XXXXX', message:"product is good"},
+		{time:'XXXXX', message:"fast deliver"},
+		{time:'XXXXX', message:"package is very bad"}
+	],
+    productType:'furniture/non-furniture'
+}
+
+=> product type is furniture take width and height as input
+=> if product type is non-furniture take weight as input.
+
+
+Instructions:
+=============
+1) free delivery is a ratio button
+2) warranty eligible is a ratio button
+3) comment message is a textarea
+4) comment time input type is datetime-local.
+
+Validations:
+============
+1) all the fields are required.
+2) price should be grater than or equal to zero.
+3) waranty months should not less then zero
+4) pincode should be 6 digit.
+5) commnet message length minimum 10.
+
+View products:
+==============
+1) Load the data in the view products component
+2) create filter based on product name
+3) price low to high, price hign to low buttons
+4) Apply 50% discount button
+5) Total prodcuts button
+
+
+
+Parent <=> child:
+=================
+
+parent.html
+-----------
+
+        <app-child [a]="10" (bEvent)="catch($event)>
+
+
+child.ts
+--------
+
+        @Input() public a:number = 0;
+
+
+        @Output() public bEvent:EventEmitter<number> = new EventEmitter();
+
+        send(){
+            this.bEvent.emit(20);
+        }
+
+
+
+
+
 
 
 

@@ -4,18 +4,37 @@
 
     <label>Name:</label>
     <input type="text" formControlName="name">
+    <div class="error" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Minimum 3 chars required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Maximum 10 only allowed</p>
+    </div>
     <br>
 
     <label>Age:</label>
     <input type="number" formControlName="age">
+    <div class="error" *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">Minimum 0 years</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">Maximum 100 years only allowed</p>
+    </div>
     <br>
 
     <label>Email:</label>
     <input type="email" formControlName="email">
+    <div class="error" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid email</p>
+    </div>
     <br>
 
     <label>Phone:</label>
     <input type="number" formControlName="phone">
+    <div class="error" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">phone is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">Minimum 10 digits</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']">Maximum 10 digits</p>
+    </div>
     <br>
 
     <div formGroupName="address">
@@ -30,6 +49,11 @@
 
         <label>Pincode:</label>
         <input type="number" formControlName="pincode">
+        <div class="error" *ngIf="userForm.get('address')?.get('pincode')?.touched && userForm.get('address')?.get('pincode')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['required']">Pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['min']">Minimum 6 digits</p>
+            <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['max']">Maximum 6 digits</p>
+        </div>
         <br>
 
     </div>
@@ -54,6 +78,11 @@
 
                 <label>CVV:</label>
                 <input type="number" formControlName="cvv">
+                <div class="error" *ngIf="cardsFormArray.controls[i].get('cvv')?.touched && cardsFormArray.controls[i].get('cvv')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['required']">CVV is required</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['min']">Minimum 3 digits</p>
+                    <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['max']">Maximum 3 digits</p>
+                </div>
                 <br>
 
                 <button (click)="deleteCard(i)" class="btn btn-danger">delete</button>
@@ -64,6 +93,25 @@
         </div>
     </div>
 
+    <label for="">Type:</label>
+    <input type="radio" name="type" formControlName="type" value="dayScholor">
+    <label for="">Day Scholor</label>
+    <input type="radio" name="type" formControlName="type" value="residential">
+    <label for="">Residential</label>
+    <br>
+
+    <div *ngIf="userForm.get('type')?.value=='dayScholor'">
+        <label for="">Bus fee:</label>
+        <input type="number" formControlName="busFee">
+        <br>
+    </div>
+
+    <div *ngIf="userForm.get('type')?.value=='residential'">
+        <label for="">Hostel fee:</label>
+        <input type="number" formControlName="hostelFee">
+        <br>
+    </div>
+    
     <button (click)="submit()" class="btn btn-warning">submit</button>
 
 </form>

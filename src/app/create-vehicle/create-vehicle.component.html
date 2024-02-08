@@ -1,30 +1,16 @@
-<h1>Create Vehicle Form</h1>
+<h1 *ngIf="!id">Create Vehicle Form</h1>
+<h1 *ngIf="id">Update Vehicle</h1>
+
 <form [formGroup]="vehicleForm">
 
     <label for="">Vehcile:</label>
     <input type="text" formControlName="Vehicle">
-    <br>
-
-    <label for="">Manufacturer:</label>
-    <input type="text" formControlName="manufacturer">
-    <br>
-
-    <label for="">Model:</label>
-    <input type="text" formControlName="model">
-    <br>
-
-    <label for="">Type:</label>
-    <input type="text" formControlName="type">
-    <br>
-
-    <label for="">Color:</label>
-    <input type="text" formControlName="color">
     <br>
     
     <label for="">Image:</label>
     <input type="text" formControlName="image">
     <br>
 
-    <button class="btn btn-warning" (click)="sumbit()">submit</button>
+    <button class="btn btn-warning" (click)="sumbit()">{{ id ? 'update' : 'crate' }}</button>
 
 </form>
