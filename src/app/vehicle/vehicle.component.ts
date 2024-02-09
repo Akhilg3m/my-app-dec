@@ -7,77 +7,79 @@ import { Router } from '@angular/router';
   templateUrl: './vehicle.component.html',
   styleUrls: ['./vehicle.component.css']
 })
-export class VehicleComponent{
+export class VehicleComponent {
 
-  public vehicles:any = [];
-  public term:string = "";
+  public vehicles: any = [];
+  public term: string = "";
 
-  public column:string = "";
-  public order:string = "";
+  public column: string = "";
+  public order: string = "";
 
-  public page:number = 0;
+  public page: number = 0;
 
 
-  constructor(private _vehicleService:VehicleService, private _router: Router) { 
+  constructor(private _vehicleService: VehicleService, private _router: Router) {
 
     _vehicleService.getVehicles().subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
 
   }
 
-  delete(id:string){
+  // lch
+
+  delete(id: string) {
     this._vehicleService.deleteVehicle(id).subscribe(
-      (data:any)=>{
-        alert(data.Vehicle+" deleted succesfully");
+      (data: any) => {
+        alert(data.Vehicle + " deleted succesfully");
         // location.reload();
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
   }
 
-  filter(){
+  filter() {
     this._vehicleService.getFilteredVehicles(this.term).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
   }
 
-  sort(){
+  sort() {
     this._vehicleService.getSortedVehicles(this.column, this.order).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
   }
 
-  pagination(){
+  pagination() {
     this._vehicleService.getPagedVehicles(this.page).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
   }
 
-  edit(id:string){
-    this._router.navigateByUrl("/dashboard/edit-vehicle/"+id);
+  edit(id: string) {
+    this._router.navigateByUrl("/dashboard/edit-vehicle/" + id);
   }
 
 }

@@ -365,11 +365,50 @@ ng g s common
     
 
 
+Naming Convensions:
+=================== 
+
+1) variables => camel case
+
+    firstName
+
+    first_name
+    first-name
+    firstname
+    FirstName
+
+2) Name should be descriptive
+
+    firstName
+
+    fn
+    fName
+
+3) We cannot use spaces in names
+
+    firstName
+
+    first name
+    first Name
+
+4) boolean variable names should start with "is"
+
+    isValid
+    isShow
+
+5) class names and interface names => pascal case
+
+    LoginComponent
+    AppModule
+    User
+
+6) file and folder names => kebab case
+
+    create-user
+    show-product
 
 
-
-
-
+    create_user
 
 
 
