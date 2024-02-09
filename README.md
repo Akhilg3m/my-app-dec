@@ -424,3 +424,28 @@ Naming Convensions:
 
 
 
+
+
+
+1) Customs
+2) Routing Guards
+3) Dynamic forms - Form array pathcing - button disable
+   
+4) Table p,s,f all together
+5) CLI Concepts
+
+6) performance
+	- ng-container, ng-content, ng-template
+	- trackby
+	- View encapsulation
+	- Change detection
+	
+7) Git concepts
+
+8) Agile development methodology
+
+
+
+
+	
+

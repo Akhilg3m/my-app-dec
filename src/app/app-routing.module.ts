@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -16,6 +16,7 @@ import { AuthenticationGuard } from './authentication.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
 import { SiblingsComponent } from './siblings/siblings.component';
+import { AboutDirectorComponent } from './about-us/about-director/about-director.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -32,14 +33,20 @@ const routes: Routes = [
     {path:'create-user', component: CreateUserComponent},
     {path:'parent', component: ParentComponent},
     {path:'edit-vehicle/:id',component: CreateVehicleComponent},
-    {path:'siblings', component: SiblingsComponent}
+    {path:'siblings', component: SiblingsComponent},
+    {path:'about-company', component:AboutDirectorComponent},
+    // {path:'contact', import module}
+    {
+      path: 'contact',
+      loadChildren: () => import('./contact-us/contact-us.module').then(m => m.ContactUsModule)
+    }
   ]},
   {path:'', component: LoginComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

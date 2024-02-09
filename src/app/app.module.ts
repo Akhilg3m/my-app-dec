@@ -24,6 +24,7 @@ import { ChildComponent } from './child/child.component';
 import { SiblingsComponent } from './siblings/siblings.component';
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { Sibling2Component } from './sibling2/sibling2.component';
+import { AboutUsModule } from './about-us/about-us.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { Sibling2Component } from './sibling2/sibling2.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutUsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
